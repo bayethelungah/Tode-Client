@@ -5,6 +5,29 @@ const DependencyView: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [dependencies, setDependencies] = useState<any>(null);
 
+  const readFileAsync = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+  
+      // Set up the onload event to resolve the Promise with the file content
+      reader.onload = () => {
+        if (reader.result) {
+          resolve(reader.result as string); // Explicitly cast to string
+        } else {
+          reject(new Error("FileReader result is null or undefined"));
+        }
+      };
+  
+      // Set up the onerror event to reject the Promise with the error
+      reader.onerror = () => {
+        reject(reader.error || new Error("An unknown error occurred while reading the file"));
+      };
+  
+      reader.readAsText(file); // Start reading the file
+    });
+  }
+  
+
   // Handle file upload
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
@@ -21,22 +44,19 @@ const DependencyView: React.FC = () => {
       return;
     }
 
-    const formData = new FormData();
-    const fileReader = new FileReader();
-
-    fileReader.onload = async (e) => {
-      const content = e.target?.result as string;
-      formData.append("file", content);
+    const formData = {
+      content: await readFileAsync(file)
     };
-
-    fileReader.readAsText(file);
 
 
     try {
       setLoading(true);
       const response = await fetch("http://localhost:8080/api/dependencies", {
         method: "POST",
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
