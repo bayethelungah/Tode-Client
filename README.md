@@ -51,18 +51,12 @@ npm run build
 ```
 
 ## Dependencies
+- React: Component-based UI framework.
+- Tailwind CSS: Utility-first CSS framework for responsive and modern design.
+- D3.js: Library for creating data visualizations.
+- Vite: Fast build tool and development server.
 
-	•	React: Component-based UI framework.
-	•	Tailwind CSS: Utility-first CSS framework for responsive and modern design.
-	•	D3.js: Library for creating data visualizations.
-	•	Vite: Fast build tool and development server.
-
-##Future Enhancements
-
-	•	Add support for real-time dependency analysis via API integration.
-	•	Improve the visualization with search and filtering capabilities.
-	•	Include metadata such as package versions and sizes in the visualization.
-
-## License
-
-  This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## Future Enhancements
+- Add support for real-time dependency analysis via API integration.
+- Improve the visualization with search and filtering capabilities.
+- Include metadata such as package versions and sizes in the visualization.
