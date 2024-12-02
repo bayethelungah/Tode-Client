@@ -1,50 +1,68 @@
-# React + TypeScript + Vite
+### Tode Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **Tode Client** is a React-based frontend application that allows users to visualize the dependency structure of their Node.js projects. Users can upload a `package.json` file to generate an interactive, D3.js-powered tree diagram of direct and nested dependencies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Upload & Analyze**: Easily upload a `package.json` file to parse and visualize dependencies.
+- **Interactive Visualization**: View your Node.js dependency tree dynamically using D3.js.
+- **Responsive Design**: Optimized for use across desktop and mobile devices.
+- **Lightweight Frontend**: Built with Vite, React, and Tailwind CSS for fast loading and minimal bundle size.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Follow these instructions to set up and run the client-side application locally.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (version 14+)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+---
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/node-dependency-walker-client.git
+   cd node-dependency-walker-client
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Running the Application
+
+Start the development server:
+```bash
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Build for Production
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To create a production build:
+```bash
+npm run build
 ```
+
+## Dependencies
+
+	•	React: Component-based UI framework.
+	•	Tailwind CSS: Utility-first CSS framework for responsive and modern design.
+	•	D3.js: Library for creating data visualizations.
+	•	Vite: Fast build tool and development server.
+
+##Future Enhancements
+
+	•	Add support for real-time dependency analysis via API integration.
+	•	Improve the visualization with search and filtering capabilities.
+	•	Include metadata such as package versions and sizes in the visualization.
+
+## License
+
+  This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
