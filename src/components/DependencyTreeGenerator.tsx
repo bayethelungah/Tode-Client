@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { createRoot } from 'react-dom/client';
 import { PackageNode } from './PackageNode';
