@@ -3,3 +3,12 @@
 @tailwind utilities;
 
  
+.primary-bg-color {
+    --tw-bg-opacity: 1;
+    background-color: #116e00;
+}
+
+.primary-text-color {
+    --tw-text-opacity: 1;
+    color: #116e00;
+}
