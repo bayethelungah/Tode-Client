@@ -3,6 +3,8 @@ export interface DependencyNode extends TodeResponseMessageBody {
     version: string;
     status: string;
     dependencies: { [key: string]: DependencyNode } | undefined;
+    repoLink: string | null;   
+    description: string | null;
 }
 
 
@@ -29,3 +31,9 @@ export interface TodeResponseMessageBody {
 }
 
 
+
+export interface ParsedFile {
+  name: string;
+  version: string;
+  dependencies: { [key: string]: string };
+}   

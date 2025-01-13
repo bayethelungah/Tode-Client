@@ -1,6 +1,10 @@
-import { TodeResponseMessage } from "./types";
+import { ParsedFile, TodeResponseMessage } from "./types";
 
-export const fetchDependencies = async (formData: { body: string }, apiRoute: string, options: { searchDepth: number }): Promise<TodeResponseMessage> => {
+export const fetchDependencies = async (formData: { body: ParsedFile | string }, apiRoute: string, options: { searchDepth: number }): Promise<TodeResponseMessage> => {
+
+  console.log("parsedFile", formData);
+  console.log("JSON.stringify(formData)", JSON.stringify(formData));
+  
     try {
       const response = await fetch("http://localhost:8080/api/dependencies/" + apiRoute + "/" + options.searchDepth, {
         method: "POST", 
