@@ -1,3 +1,5 @@
+![Tode Logo imgae of a cartoon frog](public/Toad-image_no_background.jpg)
+
 # Tode Client
 
 The **Tode Client** is a React-based frontend application that allows users to visualize the dependency structure of their Node.js projects. Users can upload a `package.json` file to generate an interactive, D3.js-powered tree diagram of direct and nested dependencies.
